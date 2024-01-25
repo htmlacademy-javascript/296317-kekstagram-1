@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Дмитрий Поторочин](https://up.htmlacademy.ru/javascript-individual/1/user/296317).
-* Наставник: `НRail Sakhaviev`.
+* Наставник: `Rail Sakhaviev`.
 
 ---
 
