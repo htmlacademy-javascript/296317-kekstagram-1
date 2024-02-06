@@ -53,4 +53,17 @@ console.log(determineTheValueLength('1', 4, '0'));
 console.log(determineTheValueLength('q', 4, 'werty'))
 console.log(determineTheValueLength('qwerty', 4, '0'))
 
-//сложить firstValue n раз пока не будет равно length
+/* Функция для проверки длины строки. Она принимает строку, которую нужно проверить, и максимальную длину и возвращает
+ true, если строка меньше или равна указанной длине, и false, если строка длиннее. Эта функция нам пригодится для валидации формы.
+ Примеры использования функции:
+ */
+
+ function checkingTheLength(value, number) {
+  return value.length <= number;
+}
+
+console.log(checkingTheLength('проверяемая строка', 20));
+console.log(checkingTheLength('проверяемая строка', 18));
+console.log(checkingTheLength('проверяемая строка', 10));
+
+
