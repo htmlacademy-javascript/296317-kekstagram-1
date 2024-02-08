@@ -5,7 +5,7 @@
 
 function checkForPalindrome(value) {
   value = value.toLowerCase().replaceAll(' ', '');
-  return value === value.split("").reverse().join("");
+  return value === value.split('').reverse().join('');
 }
 console.log(checkForPalindrome('топот'));
 console.log(checkForPalindrome('ДовОд'));
@@ -17,20 +17,20 @@ console.log(checkForPalindrome('Лёша на полке клопа нашёл '
 
  function extractionNumber(value) {
   if (typeof value === 'string') {
-    value = value.replace(/[^0-9]/g, "");
+    value = value.replace(/[^0-9]/g, '');
     return parseFloat(value);
   }
     return Math.abs(Number(value));
  }
 
-console.log(extractionNumber('2023 год'));
-console.log(extractionNumber('ECMAScript 2022'));
-console.log(extractionNumber('1 кефир, 0.5 батона'));
-console.log(extractionNumber('агент 007'));
-console.log(extractionNumber('а я томат'));
-console.log(extractionNumber(2023));
-console.log(extractionNumber(-1));
-console.log(extractionNumber(1.5)); // не смог понять как удалить точку.
+extractionNumber('2023 год');
+extractionNumber('ECMAScript 2022');
+extractionNumber('1 кефир, 0.5 батона');
+extractionNumber('агент 007');
+extractionNumber('а я томат');
+extractionNumber(2023);
+cextractionNumber(-1);
+extractionNumber(1.5); // не смог понять как удалить точку.
 
 /* Функция, которая принимает три параметра: исходную строку, минимальную длину и строку с добавочными
 символами — и возвращает исходную строку, дополненную указанными символами до заданной длины. Символы
