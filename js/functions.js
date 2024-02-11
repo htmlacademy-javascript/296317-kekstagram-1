@@ -7,63 +7,48 @@ function checkForPalindrome(value) {
   value = value.toLowerCase().replaceAll(' ', '');
   return value === value.split('').reverse().join('');
 }
-console.log(checkForPalindrome('топот'));
-console.log(checkForPalindrome('ДовОд'));
-console.log(checkForPalindrome('Кекс'));
-console.log(checkForPalindrome('Лёша на полке клопа нашёл '));
+checkForPalindrome('топот');
+
 
 /* Функция, которая принимает строку, извлекает содержащиеся в ней цифры
  от 0 до 9 и возвращает их в виде целого положительного числа. Если в строке нет ни одной цифры, функция должна вернуть NaN: */
 
- function extractionNumber(value) {
-  if (typeof value === 'string') {
-    value = value.replace(/[^0-9]/g, '');
-    return parseFloat(value);
-  }
-    return Math.abs(Number(value));
- }
+function extractNumber(value) {
+  return Number(String(value).replace(/[^0-9]/g, ''));
+}
 
-extractionNumber('2023 год');
-extractionNumber('ECMAScript 2022');
-extractionNumber('1 кефир, 0.5 батона');
-extractionNumber('агент 007');
-extractionNumber('а я томат');
-extractionNumber(2023);
-cextractionNumber(-1);
-extractionNumber(1.5); // не смог понять как удалить точку.
+extractNumber('2023 год');
+
 
 /* Функция, которая принимает три параметра: исходную строку, минимальную длину и строку с добавочными
 символами — и возвращает исходную строку, дополненную указанными символами до заданной длины. Символы
 добавляются в начало строки. Если исходная строка превышает заданную длину, она не должна обрезаться.
 Если «добивка» слишком длинная, она обрезается с конца. */
 
-
-function determineTheValueLength(value, length, firstValue) {
-
-  while
-   (length === (firstValue + value).length) {
-      return firstValue + value;
+function padStart(rawString, size, template) {
+  if (rawString.length > size) {
+    return rawString;
   }
-  return firstValue + firstValue + firstValue + value
 
+  while (rawString.length <= size) {
+    if (rawString.length + template.length > size) {
+      return template.slice(0, Math.abs(rawString.length - size)) + rawString;
+    }
+    rawString = template + rawString;
+  }
+  return rawString;
 }
 
-console.log(determineTheValueLength('1', 2, '0'));
-console.log(determineTheValueLength('1', 4, '0'));
-console.log(determineTheValueLength('q', 4, 'werty'))
-console.log(determineTheValueLength('qwerty', 4, '0'))
+padStart('1', 2, '0');
+
 
 /* Функция для проверки длины строки. Она принимает строку, которую нужно проверить, и максимальную длину и возвращает
  true, если строка меньше или равна указанной длине, и false, если строка длиннее. Эта функция нам пригодится для валидации формы.
  Примеры использования функции:
  */
 
- function checkingTheLength(value, number) {
+function checkingTheLength(value, number) {
   return value.length <= number;
 }
 
-console.log(checkingTheLength('проверяемая строка', 20));
-console.log(checkingTheLength('проверяемая строка', 18));
-console.log(checkingTheLength('проверяемая строка', 10));
-
-
+checkingTheLength('проверяемая строка', 20);
